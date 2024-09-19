@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_0" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="HQLAudioRecorder" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1u4-Nq-xCV">
+                                <rect key="frame" x="77" y="404.66666666666669" width="58.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="录音"/>
+                                <connections>
+                                    <action selector="onRecordBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OOc-Ke-7TA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0cd-Jx-v3C">
+                                <rect key="frame" x="165.66666666666666" y="404.66666666666669" width="58.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="暂停"/>
+                                <connections>
+                                    <action selector="onPauseBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Kdi-Hd-uJR"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z7C-vl-MgB">
+                                <rect key="frame" x="254.33333333333334" y="404.66666666666669" width="58.666666666666657" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="播放"/>
+                                <connections>
+                                    <action selector="onPlayBtnClick:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mqu-kf-JaG"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="提示" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TBR-f0-aRh">
+                                <rect key="frame" x="177.66666666666666" y="539.66666666666663" width="34.666666666666657" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Z7C-vl-MgB" firstAttribute="leading" secondItem="0cd-Jx-v3C" secondAttribute="trailing" constant="30" id="8He-hq-KRc"/>
+                            <constraint firstItem="0cd-Jx-v3C" firstAttribute="leading" secondItem="1u4-Nq-xCV" secondAttribute="trailing" constant="30" id="9YE-q1-KpH"/>
+                            <constraint firstItem="1u4-Nq-xCV" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="EAg-pE-fsw"/>
+                            <constraint firstItem="Z7C-vl-MgB" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ExC-dB-i8H"/>
+                            <constraint firstItem="0cd-Jx-v3C" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PVJ-e1-G23"/>
+                            <constraint firstItem="TBR-f0-aRh" firstAttribute="top" secondItem="0cd-Jx-v3C" secondAttribute="bottom" constant="100" id="Vgz-fL-wms"/>
+                            <constraint firstItem="TBR-f0-aRh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="pgR-Oh-Qiv"/>
+                            <constraint firstItem="0cd-Jx-v3C" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tg0-eJ-WAj"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pauseBtn" destination="0cd-Jx-v3C" id="6hU-58-soe"/>
+                        <outlet property="playBtn" destination="Z7C-vl-MgB" id="nwA-ZG-2Wv"/>
+                        <outlet property="recordBtn" destination="1u4-Nq-xCV" id="zNF-aZ-MPw"/>
+                        <outlet property="tipsLabel" destination="TBR-f0-aRh" id="0Or-Bn-QdB"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="-28"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
